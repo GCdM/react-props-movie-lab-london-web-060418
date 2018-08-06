@@ -4,8 +4,26 @@ import movieData from './data.js'
 
 export default class MovieShowcase extends Component {
 
+  // state = {
+  //   movies: []
+  // }
+  //
+  // componentDidMount() {
+  //   this.fetchMovieData()
+  // }
+  //
+  // fetchMovieData = () => {
+  //   fetch(url)
+  //     .then(resp => resp.josn())
+  //     .then(movies => this.setState({ movies }))
+  // }
+  // deleteMovie = id => {
+  //   const movies = this.state.movies.filter(movie => movie.id !== id)
+  //   this.setState({ movies })
+  // }
+
   generateMovieCards = () => {
-    // map over your movieData array and return the correct 
+    return movieData.map( movie => <MovieCard title={movie.title} IMDBRating={movie.IMDBRating} poster={movie.poster} genres={movie.genres} /> )
   }
 
   render() {
